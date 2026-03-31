@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>Forja de Aethrion</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial;
+    background-color: #0d0d0d;
+    color: white;
+}
+
+/* Banner */
+.banner {
+    background-image: url('logo.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 120px 20px;
+    text-align: center;
+}
+
+.banner h1 {
+    font-size: 50px;
+}
+
+.banner p {
+    font-size: 20px;
+}
+
+/* Botão principal */
+.cta {
+    margin-top: 20px;
+}
+
+.cta a {
+    background: #25D366;
+    padding: 15px 25px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 8px;
+}
+
+/* Produtos */
+.produtos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+}
+
+.card {
+    background: #1a1a1a;
+    margin: 15px;
+    padding: 15px;
+    border-radius: 10px;
+    width: 220px;
+    text-align: center;
+}
+
+.card img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.preco {
+    color: orange;
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.botao {
+    background: orange;
+    padding: 10px;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    display: inline-block;
+    border-radius: 5px;
+}
+
+/* Game */
+.game {
+    text-align: center;
+    padding: 40px;
+}
+
+button {
+    padding: 10px 20px;
+    margin: 5px;
+    border: none;
+    background: orange;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.resultado {
+    margin-top: 20px;
+    font-size: 20px;
+}
+
+/* Prova */
+.prova {
+    text-align: center;
+    padding: 30px;
+    background: #111;
+}
+</style>
+
+</head>
+
+<body>
+
+<!-- Banner -->
+<div class="banner">
+    <h1>🔥 Forja de Aethrion</h1>
+    <p>Forjando heróis e monstros para sua aventura</p>
+
+    <div class="cta">
+        <a href="https://wa.me/SEUNUMERO">📲 Fazer pedido agora</a>
+    </div>
+</div>
+
+<!-- Produtos -->
+<div class="produtos">
+
+<div class="card">
+<img src="mago.jpg">
+<h3>Mago Arcano</h3>
+<div class="preco">R$ 29,90</div>
+<a class="botao" href="https://wa.me/SEUNUMERO?text=Quero%20o%20Mago%20Arcano">Comprar</a>
+</div>
+
+<div class="card">
+<img src="necromante.jpg">
+<h3>Necromante</h3>
+<div class="preco">R$ 34,90</div>
+<a class="botao" href="https://wa.me/SEUNUMERO?text=Quero%20o%20Necromante">Comprar</a>
+</div>
+
+<div class="card">
+<img src="guerreiro.jpg">
+<h3>Guerreiro</h3>
+<div class="preco">R$ 29,90</div>
+<a class="botao" href="https://wa.me/SEUNUMERO?text=Quero%20o%20Guerreiro">Comprar</a>
+</div>
+
+<div class="card">
+<img src="bardo.jpg">
+<h3>Bardo</h3>
+<div class="preco">R$ 27,90</div>
+<a class="botao" href="https://wa.me/SEUNUMERO?text=Quero%20o%20Bardo">Comprar</a>
+</div>
+
+<div class="card">
+<img src="anao.jpg">
+<h3>Anão Ferreiro</h3>
+<div class="preco">R$ 32,90</div>
+<a class="botao" href="https://wa.me/SEUNUMERO?text=Quero%20o%20Anão">Comprar</a>
+</div>
+
+</div>
+
+<!-- Mini Game (AGORA VENDE) -->
+<div class="game">
+<h2>🎲 Descubra seu personagem</h2>
+
+<button onclick="escolha('força')">Força</button>
+<button onclick="escolha('magia')">Magia</button>
+<button onclick="escolha('destreza')">Destreza</button>
+
+<div class="resultado" id="resultado"></div>
+</div>
+
+<!-- Prova -->
+<div class="prova">
+<h2>⚔️ Miniaturas feitas com alta qualidade</h2>
+<p>Impressão 3D detalhada • Ideal para RPG de mesa • Enviamos para todo Brasil</p>
+</div>
+
+<script>
+function escolha(tipo) {
+    let classe = "";
+
+    if (tipo === "força") {
+        let opcoes = ["Guerreiro", "Bárbaro", "Paladino"];
+        classe = opcoes[Math.floor(Math.random() * opcoes.length)];
+    }
+
+    if (tipo === "magia") {
+        let opcoes = ["Mago", "Necromante", "Feiticeiro"];
+        classe = opcoes[Math.floor(Math.random() * opcoes.length)];
+    }
+
+    if (tipo === "destreza") {
+        let opcoes = ["Ladino", "Arqueiro", "Bardo"];
+        classe = opcoes[Math.floor(Math.random() * opcoes.length)];
+    }
+
+    document.getElementById("resultado").innerHTML =
+    "🔥 Você seria um <b>" + classe + "</b><br><br>" +
+    "<a href='https://wa.me/SEUNUMERO?text=Quero%20um%20personagem%20do%20tipo%20" + classe + "' style='color:orange;'>👉 Quero um personagem assim</a>";
+}
+</script>
+
+</body>
+</html>
